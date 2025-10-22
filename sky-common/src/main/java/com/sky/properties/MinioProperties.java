@@ -4,14 +4,16 @@ import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
-@Component
-@ConfigurationProperties(prefix = "sky.alioss")
 @Data
-public class AliOssProperties {
-
+@Component
+@ConfigurationProperties(prefix = "sky.minio")
+public class MinioProperties {
+    //连接url
     private String endpoint;
-    private String accessKeyId;
-    private String accessKeySecret;
+    //公钥
+    private String accesskey;
+    //私钥
+    private  String secretkey;
+    //存储桶名称
     private String bucketName;
-
 }

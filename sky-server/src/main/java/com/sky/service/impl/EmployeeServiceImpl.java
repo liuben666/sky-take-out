@@ -87,7 +87,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         //设置密码，要加密存储
         employee.setPassword(DigestUtils.md5DigestAsHex(PasswordConstant.DEFAULT_PASSWORD.getBytes()));
 
-        //设置当前记录时间和修改时间
+       /* //设置当前记录时间和修改时间
         employee.setCreateTime(LocalDateTime.now());
         employee.setUpdateTime(LocalDateTime.now());
 
@@ -95,7 +95,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         employee.setUpdateUser(BaseContext.getCurrentId());
         employee.setCreateUser(BaseContext.getCurrentId());
         //  10L 就是一个值为 10 的 long 类型数字
-
+*/
 
         employeeMapper.insert(employee);
 
@@ -155,8 +155,8 @@ public class EmployeeServiceImpl implements EmployeeService {
         //对象不一样，要从dto转成实体
         BeanUtils.copyProperties(employeeDTO, employee);
 
-        employee.setUpdateTime(LocalDateTime.now());
-        employee.setUpdateUser(BaseContext.getCurrentId());
+        /*employee.setUpdateTime(LocalDateTime.now());
+        employee.setUpdateUser(BaseContext.getCurrentId());*/
 
         employeeMapper.update(employee);
     }
